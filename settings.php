@@ -6,11 +6,11 @@
 // Database
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => 'drupal7',
-  'username' => '',
-  'password' => '',
-  'host' => 'ip:port',
-  'prefix' => ''
+  'database' => 'drupal',
+  'username' => 'drupal',
+  'password' => 'drupal',
+  'host' => 'db', // This has the be the hostname defined in the docker-compose.yml
+  'prefix' => 'd7_'
 );
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -26,4 +26,4 @@ $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 // Don't bootstrap the database when serving pages from the cache.
 $conf['page_cache_without_database'] = TRUE;
 $conf['page_cache_invoke_hooks'] = FALSE;
-$conf['memcache_servers'] = array('ip:port' => 'default');
+$conf['memcache_servers'] = array('memcached:11211' => 'default');
