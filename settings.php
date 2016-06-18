@@ -1,18 +1,5 @@
 <?php
 
-// This is a very minimal settings.php file.
-
-////////////////////////////////////////////////////////////////////////////////
-// Database
-$databases['default']['default'] = array(
-  'driver' => 'mysql',
-  'database' => 'drupal',
-  'username' => 'drupal',
-  'password' => 'drupal',
-  'host' => 'db', // This has the be the hostname defined in the docker-compose.yml
-  'prefix' => 'd7_'
-);
-
 ////////////////////////////////////////////////////////////////////////////////
 // Memcache configuration
 $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
@@ -27,3 +14,10 @@ $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 $conf['page_cache_without_database'] = TRUE;
 $conf['page_cache_invoke_hooks'] = FALSE;
 $conf['memcache_servers'] = array('memcached:11211' => 'default');
+
+# environment-specific settings
+# see https://www.karelbemelmans.com/2015/09/separating-your-project-and-environment-settings-in-drupal-7/
+$settings = DRUPAL_ROOT . '/sites/default/env.settings.php';
+if (file_exists($settings)) {
+ require_once($settings);
+}
