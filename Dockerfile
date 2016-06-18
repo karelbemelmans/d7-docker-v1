@@ -14,4 +14,8 @@ COPY settings.php sites/default/settings.php
 
 # Libraries
 
+# Apply patches if needed
+
+#
+
 # Done.
