@@ -1,23 +1,24 @@
+# Deployable container
+
 FROM karelbemelmans/d7-docker-base
 MAINTAINER Karel Bemelmans <mail@karelbemelmans.com>
 
-# Copy our local settings.php file into the container.
-COPY settings.php sites/default/settings.php
+## Base stuff.
 
-# Also copy our env.settings.php file to the container.
-# This file will be generated during a deployment phase.
-COPY env.settings.php sites/default/env.settings.php
+# We want to add stuff to the settings.php file so we just append this.
+COPY config/extra.settings.php >> sites/default/extra.settings.php
 
 # Install extra modules using the d7download.sh script from the base image.
 #
 # Modules
+COPY sites/all/modules/features sites/all/modules/features
+COPY sites/all/modules/custom sites/all/modules/custom
 
 # Themes
+COPY sites/all/themes/custom sites/all/themes/custom
 
-# Libraries
+# Patches.
+# Apply patches to a contrib module, theme or library if needed.
 
-# Apply patches if needed
-
-#
 
 # Done.
