@@ -7,6 +7,14 @@ services:
     links:
       - db
       - memcached
+    environment:
+      DRUPAL_DB_NAME: drupal
+      DRUPAL_DB_USER: drupal
+      DRUPAL_DB_PASS: drupal
+      DRUPAL_DB_HOST: db
+      DRUPAL_DB_PREFIX: drupal_
+      DRUPAL_MEMCACHE_HOST: memcached
+      DRUPAL_MEMCACHE_PORT: 11211
   db:
     image: mysql
     environment:
