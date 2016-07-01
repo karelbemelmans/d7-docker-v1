@@ -1,4 +1,4 @@
-# Drupal 7 Docker full image v1
+# Drupal 7 Docker full image v1 [![Build Status](https://travis-ci.org/karelbemelmans/d7-docker-v1.svg?branch=master)](https://travis-ci.org/karelbemelmans/d7-docker-v1)
 
 The Dockerfile of this image is hosted on Github: [Dockerfile](https://github.com/karelbemelmans/d7-docker-b1/blob/master/Dockerfile)
 
