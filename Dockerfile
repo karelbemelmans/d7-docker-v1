@@ -7,7 +7,7 @@ MAINTAINER Karel Bemelmans <mail@karelbemelmans.com>
 
 # Additinal Drupal settings can be put in the extra.settings.php file.
 # If this file exists it will be included at the bottom of settings.php
-COPY config/extra.settings.php >> sites/default/extra.settings.php
+COPY config/extra.settings.php sites/default/extra.settings.php
 
 # Install extra modules using the d7download.sh script from the base image.
 #
