@@ -15,6 +15,11 @@ services:
       DRUPAL_DB_PREFIX: drupal_
       DRUPAL_MEMCACHE_HOST: memcached
       DRUPAL_MEMCACHE_PORT: 11211
+    volumes:
+      - ./sites/all/modules/custom:/var/www/html/sites/all/modules/custom
+      - ./sites/all/modules/features:/var/www/html/sites/all/modules/features
+      - ./sites/all/themes/custom:/var/www/html/sites/all/themes/custom
+      - ./sites/default/files:/var/www/html/sites/default/files
   db:
     image: mysql
     environment:
