@@ -2,10 +2,17 @@
 
 This Dockerfile extends the [karelbemelmans/d7-docker-base](https://github.com/karelbemelmans/d7-docker-base) image and serves as an example how to use the base image for your own Docker container.
 
+This project has 2 goals:
+
+  - Use Docker for local development
+  - Use Docker to build a deployable container
+
+Currently I'm working on the first one, the second one will come when the first one is done.
+
 ## Requirements
 
   - Docker version 1.12 (I use the OSX beta currently)
-  - docker-composer (I used version 1.7.1)
+  - [docker-compose](https://docs.docker.com/compose/install/) (I used version 1.7.1)
 
 ## How to run this example
 
