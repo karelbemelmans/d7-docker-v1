@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_page_alter().
+ */
+function my_module_page_alter(&$page) {
+  $page['content']['system_main']['my_module'] = array(
+    '#weight' => 100,
+    '#markup' => t('Notice: This it the My Module showing up in your $page.'),
+  );
+}

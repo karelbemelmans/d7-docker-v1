@@ -1,0 +1,4 @@
+name = My Module
+description = My Module
+package = Example Modules
+core = 7.x
