@@ -6,10 +6,9 @@
 // you need to rebuild your Drupal container!
 
 // This is just a test, clean urls are not needed to be disabled.
-$conf['clean_url'] = 0;
+$conf['clean_url'] = 1;
 
 // Set the private files url to the VOLUME we defined
+$conf['file_public_path'] = 'sites/default/files';
 $conf['file_private_path'] = '/data/private';
 
-// More things can be added here.
-$conf['foo'] = 'bar';
