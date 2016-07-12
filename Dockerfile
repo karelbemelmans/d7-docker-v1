@@ -11,9 +11,8 @@ COPY config/extra.settings.php sites/default/extra.settings.php
 #
 # Colorbox, needed for the colorbox contrib module
 RUN curl -L --silent https://github.com/jackmoore/colorbox/archive/1.x.zip -o /tmp/colorbox.zip \
-      && mkdir -p /tmp/colorbox \
-      && mkdir -p sites/all/libraries/colorbox \
-      && unzip /tmp/colorbox.zip -d sites/all/libraries/colorbox \
+      && unzip /tmp/colorbox.zip -d sites/all/libraries/ \
+      && mv sites/all/libraries/colorbox-1.x sites/all/libraries/colorbox
       && rm -f /tmp/colorbox.zip
 
 # Drupal Modules
