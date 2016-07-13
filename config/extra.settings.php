@@ -19,6 +19,6 @@ $conf['file_private_path'] = '/data/private';
 //
 // We need to use the REMOTE_ADDR method since we do not know the internal ip's
 // of the ELB's our site is using.
-$conf['reverse_proxy_addresses'] = $_SERVER['REMOTE_ADDR'];
 $conf['reverse_proxy'] = TRUE;
+$conf['reverse_proxy_addresses'] = array($_SERVER['REMOTE_ADDR']);
 $conf['reverse_proxy_header'] = 'HTTP_X_FORWARDED_FOR';
