@@ -6,7 +6,7 @@ services:
       - "80:80"
     links:
       - db
-      - memcached
+      - redis
     environment:
       DRUPAL_DB_NAME: drupal
       DRUPAL_DB_USER: drupal
