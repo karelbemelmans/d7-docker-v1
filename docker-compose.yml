@@ -13,8 +13,8 @@ services:
       DRUPAL_DB_PASS: drupal
       DRUPAL_DB_HOST: db
       DRUPAL_DB_PREFIX: drupal_
-      DRUPAL_MEMCACHE_HOST: memcached
-      DRUPAL_MEMCACHE_PORT: 11211
+      DRUPAL_REDIS_HOST: redis
+      DRUPAL_REDIS_PORT: 6379
     volumes:
       - ./sites/all/modules/custom:/var/www/html/sites/all/modules/custom
       - ./sites/all/modules/features:/var/www/html/sites/all/modules/features
@@ -27,5 +27,5 @@ services:
       MYSQL_DATABASE: drupal
       MYSQL_USER: drupal
       MYSQL_PASSWORD: drupal
-  memcached:
-    image: memcached
+  redis:
+    image: redis

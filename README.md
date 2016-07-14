@@ -4,8 +4,8 @@ This Dockerfile extends the [karelbemelmans/d7-docker-base](https://github.com/k
 
 This project has 2 goals:
 
+  - Use Docker to build a deployable container [DONE]
   - Use Docker for local development
-  - Use Docker to build a deployable container
 
 Currently I'm working on the first one, the second one will come when the first one is done.
 
