@@ -1,14 +1,26 @@
+sudo: required
+
 language: bash
-services: docker
+
+services:
+  - docker
+
+env:
+  COMPOSE_VERSION: 1.7.1
+
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
 
 install:
   - git clone https://github.com/karelbemelmans/d7-docker-v1.git ~/d7-docker-v1
 
-before_script:
-  - image=d7-docker-v1
-
 script:
-  - docker build -t "$image" .
+  - docker-compose build
+  - docker-compose up -d
+  - curl -I http://localhost/install.php
 
 after_script:
   - docker images

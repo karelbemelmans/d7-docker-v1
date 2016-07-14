@@ -16,10 +16,9 @@ services:
       DRUPAL_REDIS_HOST: redis
       DRUPAL_REDIS_PORT: 6379
     volumes:
-      - ./sites/all/modules/custom:/var/www/html/sites/all/modules/custom
-      - ./sites/all/modules/features:/var/www/html/sites/all/modules/features
-      - ./sites/all/themes/custom:/var/www/html/sites/all/themes/custom
       - ./sites/default/files:/var/www/html/sites/default/files
+      - ./private:/data/private
+
   db:
     image: mysql
     environment:
