@@ -18,7 +18,6 @@ services:
     volumes:
       - ./sites/default/files:/var/www/html/sites/default/files
       - ./private:/data/private
-
   db:
     image: mysql
     environment:
