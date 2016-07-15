@@ -26,5 +26,7 @@ services:
       MYSQL_DATABASE: drupal
       MYSQL_USER: drupal
       MYSQL_PASSWORD: drupal
+    volumes:
+      - ./mysql:/var/lib/mysql
   redis:
     image: redis
