@@ -1,6 +1,6 @@
 # Drupal development container
 
-FROM karelbemelmans/d7-docker-base
+FROM karelbemelmans/d7-docker-base:1.0
 MAINTAINER Karel Bemelmans <mail@karelbemelmans.com>
 
 # Additinal Drupal settings can be put in the extra.settings.php file.
